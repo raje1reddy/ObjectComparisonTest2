@@ -9,35 +9,102 @@ import static org.junit.Assert.*;
 public class BankAccountTest {
 
     @Test
-    public void test1() {
+    public void test_object_not_null() {
         BankAccount b1 = new BankAccount();
         b1.acctNumber = "0023490";
         b1.acctType = 5;
-        ArrayList <BankAccount> list = new ArrayList<BankAccount>();
-
-        list.add(b1);
-        boolean RESULTs = list.add(b1);;
-        System.out.println(RESULTs);
-        boolean expResult = true;
-        assertEquals(expResult, RESULTs);
 
         BankAccount b2 = new BankAccount();
+        b2.acctNumber = "0023490";
+        b2.acctType = 5;
+
+        //test_object_not_null
+        boolean RESULT1 = (b1.equals(b2));
+        System.out.println(RESULT1);
+        boolean expResult1 = true;
+        assertEquals(expResult1, RESULT1);
+    }
+    @Test
+    public void test_object_null() {
+        BankAccount b1 = new BankAccount();
         b1.acctNumber = "0023490";
         b1.acctType = 5;
-        //list.contains(b2);
 
-        boolean RESULT = list.contains(b2);;
-        System.out.println(RESULT);
-        boolean expResults = false;
-        assertEquals(expResults, RESULT);
+        //bBankAccount b2 = new BankAccount();
+        BankAccount b2 =  null;
+        //b2.acctNumber = null;
+        //b2.acctType = 0;
 
-        boolean RESULT1 = (b1.equals(b2));
+
+        //test_object__null
+        boolean RESULT = (b1.equals(b2));
         System.out.println(RESULT);
         boolean expResult1 = false;
-        assertEquals(expResult1, RESULT1);
+        assertEquals(expResult1, RESULT);
+
+    }
 
 
+    @Test
+    public void test_equals_acctNumber() {
+        BankAccount b1 = new BankAccount();
+        b1.acctNumber = "0023490";
+        b1.acctType = 5;
+
+        BankAccount b2 = new BankAccount();
+        b2.acctNumber = "0023490";
+        b2.acctType = 5;
 
 
+        boolean RESULT = (b1.equals(b2));
+        System.out.println(RESULT);
+        boolean expResult1 = true;
+        assertEquals(expResult1, RESULT);
+
+    }
+
+    @Test
+    public void test_notequal_acctNumber() {
+        BankAccount b1 = new BankAccount();
+        b1.acctNumber = "0023490";
+        b1.acctType = 5;
+        BankAccount b2 = new BankAccount();
+        b2.acctNumber = "0023490000087878";
+        b2.acctType = 5;
+
+        boolean RESULT = (b1.equals(b2));
+        System.out.println(RESULT);
+        boolean expResult1 = false;
+        assertEquals(expResult1, RESULT);
+    }
+
+    @Test
+    public void test_equals_acctType() {
+        BankAccount b1 = new BankAccount();
+         b1.acctNumber = "0023490";
+        b1.acctType = 5;
+        BankAccount b2 = new BankAccount();
+        b2.acctNumber = "0023490";
+        b2.acctType = 5;
+
+        boolean RESULT = (b1.equals(b2));
+        System.out.println(RESULT);
+        boolean expResult1 =  true;
+        assertEquals(expResult1, RESULT);
+    }
+
+    @Test
+    public void test_notequal_acctType() {
+        BankAccount b1 = new BankAccount();
+        b1.acctNumber = "0023490";
+        b1.acctType = 5;
+        BankAccount b2 = new BankAccount();
+        b2.acctNumber = "0023490";
+        b2.acctType = 6;
+
+        boolean RESULT = (b1.equals(b2));
+        System.out.println(RESULT);
+        boolean expResult1 =  false;
+        assertEquals(expResult1, RESULT);
     }
 }
