@@ -16,6 +16,11 @@ public class BankAccountTest {
         ArrayList <BankAccount> list = new ArrayList<BankAccount>();
 
         list.add(b1);
+        boolean RESULTs = list.add(b1);;
+        System.out.println(RESULTs);
+        boolean expResult = true;
+        assertEquals(expResult, RESULTs);
+
         BankAccount b2 = new BankAccount();
         b1.acctNumber = "0023490";
         b1.acctType = 5;
@@ -23,8 +28,8 @@ public class BankAccountTest {
 
         boolean RESULT = list.contains(b2);;
         System.out.println(RESULT);
-        boolean expResult = false;
-        assertEquals(expResult, RESULT);
+        boolean expResults = false;
+        assertEquals(expResults, RESULT);
 
 
 
