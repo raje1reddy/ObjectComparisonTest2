@@ -31,6 +31,11 @@ public class BankAccountTest {
         boolean expResults = false;
         assertEquals(expResults, RESULT);
 
+        boolean RESULT1 = (b1.equals(b2));
+        System.out.println(RESULT);
+        boolean expResult1 = false;
+        assertEquals(expResult1, RESULT1);
+
 
 
 
